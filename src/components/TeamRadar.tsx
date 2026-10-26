@@ -4,8 +4,7 @@ import { personColor } from './verdictStyles'
 
 interface Props {
   summary: TeamSummary
-  // per-person lines are drawn only when people answered under their names
-  people: string[] | null
+  people: string[]
 }
 
 const AVERAGE_KEY = 'Team average'
@@ -31,7 +30,7 @@ export function TeamRadar({ summary, people }: Props) {
       name: d.name,
       [AVERAGE_KEY]: +summary.dysfunctions[i].average.toFixed(2),
     }
-    people?.forEach((p, pi) => (point[p] = summary.dysfunctions[i].scores[pi]))
+    people.forEach((p, pi) => (point[p] = summary.dysfunctions[i].scores[pi]))
     return point
   })
 
@@ -42,7 +41,7 @@ export function TeamRadar({ summary, people }: Props) {
           <PolarGrid stroke="var(--color-line)" />
           <PolarAngleAxis dataKey="name" tick={<AxisLabel />} />
           <PolarRadiusAxis domain={[SCORE_MIN, SCORE_MAX]} tickCount={7} tick={{ fontSize: 10 }} axisLine={false} angle={90} />
-          {people?.map((p, i) => (
+          {people.map((p, i) => (
             <Radar key={p} dataKey={p} stroke={personColor(i)} strokeWidth={1.5} fill="none" dot={{ r: 2.5, fill: personColor(i) }} isAnimationActive={false} />
           ))}
           <Radar

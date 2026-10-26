@@ -4,7 +4,7 @@ import { AGREEMENT_BADGE, VERDICT_BADGE, personColor } from './verdictStyles'
 const position = (score: number) => `${((score - SCORE_MIN) / (SCORE_MAX - SCORE_MIN)) * 100}%`
 
 // Worst first, each with the team average and where every individual score sits on the 3–9 scale.
-export function DysfunctionList({ summary, people }: { summary: TeamSummary; people: string[] | null }) {
+export function DysfunctionList({ summary, people }: { summary: TeamSummary; people: string[] }) {
   const items = [...summary.dysfunctions].sort((a, b) => a.average - b.average)
 
   return (
@@ -40,8 +40,8 @@ export function DysfunctionList({ summary, people }: { summary: TeamSummary; peo
                   <div
                     key={i}
                     className="border-surface absolute top-[7px] size-5 -translate-x-1/2 rounded-full border-[2.5px] shadow"
-                    style={{ left: position(score), background: people ? personColor(i) : 'var(--color-muted)', opacity: people ? 1 : 0.55 }}
-                    title={people ? `${people[i]}: ${score}` : String(score)}
+                    style={{ left: position(score), background: personColor(i) }}
+                    title={`${people[i]}: ${score}`}
                   />
                 ))}
                 <div className="text-muted absolute inset-x-0 top-6 flex justify-between text-[10px]">

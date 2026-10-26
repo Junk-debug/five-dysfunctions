@@ -80,7 +80,8 @@ export function Setup({ onFile }: { onFile: (name: string, text: string) => void
             )}
             <p>
               <b>Decide how open the results are.</b> Keep an optional <b>“Your name”</b> short-answer question if your team wants to discuss who answered
-              what. Delete it for an anonymous survey: the dashboard then shows only totals, and only after {MIN_ANONYMOUS_RESPONSES} people have answered.
+              what. Delete it for an anonymous survey: everyone still gets their own profile, labelled Participant 1, 2, … in random order, and results appear
+              after {MIN_ANONYMOUS_RESPONSES} people have answered.
             </p>
             <p>
               In the form's <b>Settings → Responses</b>, keep <b>Collect email addresses</b> off. The dashboard ignores emails anyway, but a published sheet

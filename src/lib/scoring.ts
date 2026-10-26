@@ -31,8 +31,6 @@ export const VERDICT_LABEL: Record<Verdict, string> = {
   bad: 'needs attention',
 }
 
-export const ANSWER_LABEL: Record<number, string> = { 1: 'Rarely', 2: 'Sometimes', 3: 'Usually' }
-
 // 8–9 healthy · 6–7 at risk · 3–5 needs attention
 export function scoreVerdict(score: number): Verdict {
   const rounded = Math.round(score)

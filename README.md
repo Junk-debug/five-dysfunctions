@@ -9,7 +9,7 @@ Your team answers a Google Form. The dashboard reads the answers from your own p
 - team health and the weakest area
 - a radar of the five dysfunctions, with each person's line when answers are named
 - where people agree and where opinions split
-- answers to every question, per person or as counts
+- answers to every question, per person
 
 ## How it works
 
@@ -26,7 +26,7 @@ The sheet link lives in the URL fragment (after `#`), which browsers never send 
 The form may have an optional short-answer question whose title contains "name" (for example *Your name*).
 
 - **With names**, the dashboard shows each person's scores, so the team can talk through why people see things differently.
-- **Without names**, it shows only averages and answer counts, and only after at least 3 responses.
+- **Without names**, everyone still gets a profile, labelled *Participant 1, 2, …* in a shuffled order (not the order people answered), and results appear only after at least 3 responses.
 
 Columns with email addresses are always ignored. Still, keep *Collect email addresses* off: a published sheet is readable by anyone with its link.
 
