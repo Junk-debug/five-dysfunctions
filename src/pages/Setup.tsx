@@ -48,7 +48,7 @@ export function Setup({ onFile }: { onFile: (name: string, text: string) => void
       <header className="mb-8">
         <h1 className="font-display text-[clamp(26px,4.4vw,44px)] leading-[1.05] font-extrabold tracking-tight">Five Dysfunctions of a Team</h1>
         <p className="text-muted mt-4 max-w-[640px] text-[16px]">
-          A free results dashboard for Patrick Lencioni's {QUESTION_COUNT}-question team assessment. Your team answers a Google Form, the dashboard turns the
+          A free results dashboard for a {QUESTION_COUNT}-question team assessment based on Patrick Lencioni's model. Your team answers a Google Form, the dashboard turns the
           answers into a picture you can discuss together. No sign-up, no server: answers stay in your own Google Sheet.
         </p>
       </header>
@@ -66,8 +66,15 @@ export function Setup({ onFile }: { onFile: (name: string, text: string) => void
             ) : (
               <>
                 <p>
-                  Create a Google Form with the {QUESTION_COUNT} statements of the assessment, each as a <b>Linear scale from 1 to 3</b> (1 = rarely, 2 =
-                  sometimes, 3 = usually), in the book's order. The dashboard groups them like this:
+                  The quickest way: paste{' '}
+                  <a className="text-ink underline" href={`${REPO_URL}/blob/main/template/create-form.gs`} target="_blank" rel="noreferrer">
+                    this script
+                  </a>{' '}
+                  into a new project at <b>script.google.com</b> and run it. It builds the whole form in your Drive.
+                </p>
+                <p>
+                  Or build it by hand: {QUESTION_COUNT} statements, each a <b>Linear scale from 1 to 3</b> (1 = rarely, 2 = sometimes, 3 = usually). The
+                  dashboard groups them by position:
                 </p>
                 <ul className="list-disc pl-5">
                   {DYSFUNCTIONS.map((d) => (
