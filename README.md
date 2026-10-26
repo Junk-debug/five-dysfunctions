@@ -30,20 +30,10 @@ The form may have an optional short-answer question whose title contains "name" 
 
 Columns with email addresses are always ignored. Still, keep *Collect email addresses* off: a published sheet is readable by anyone with its link.
 
-## Creating the form
-
-[`template/create-form.gs`](template/create-form.gs) builds the survey in one go:
-
-1. Open [script.google.com](https://script.google.com) → **New project**, paste the file, save.
-2. Choose `createForm` and click **Run**, allow access.
-3. The execution log prints the edit link, the survey link and a "make a copy" link.
-
-Set `ASK_NAME = false` at the top for an anonymous survey. The statements are written for this project; they follow the five dysfunctions but are not the book's wording.
-
 ## Form format
 
 - First column: the Google Forms timestamp.
-- 15 questions, each a linear scale from 1 to 3 (1 = rarely, 2 = sometimes, 3 = usually), in the order of `template/create-form.gs`.
+- 15 questions, each a linear scale from 1 to 3 (1 = rarely, 2 = sometimes, 3 = usually), in a fixed order (see the table below).
 - Optional name column anywhere.
 
 The dashboard reads question text from the sheet's header row and groups questions by number:
@@ -68,7 +58,7 @@ pnpm test
 
 Pushing to `main` builds and deploys to GitHub Pages (`.github/workflows/deploy.yml`).
 
-To point the setup page at a template form, set `TEMPLATE_FORM_COPY_URL` in `src/config.ts` to the form's `…/copy` link.
+The template form is built by `template/create-form.gs` (run it once at script.google.com → `createForm`). Put the `…/copy` link it logs into `TEMPLATE_FORM_COPY_URL` in `src/config.ts`.
 
 ---
 

@@ -66,15 +66,8 @@ export function Setup({ onFile }: { onFile: (name: string, text: string) => void
             ) : (
               <>
                 <p>
-                  The quickest way: paste{' '}
-                  <a className="text-ink underline" href={`${REPO_URL}/blob/main/template/create-form.gs`} target="_blank" rel="noreferrer">
-                    this script
-                  </a>{' '}
-                  into a new project at <b>script.google.com</b> and run it. It builds the whole form in your Drive.
-                </p>
-                <p>
-                  Or build it by hand: {QUESTION_COUNT} statements, each a <b>Linear scale from 1 to 3</b> (1 = rarely, 2 = sometimes, 3 = usually). The
-                  dashboard groups them by position:
+                  Create a Google Form with {QUESTION_COUNT} statements, each a <b>Linear scale from 1 to 3</b> (1 = rarely, 2 = sometimes, 3 = usually).
+                  The dashboard groups them by position:
                 </p>
                 <ul className="list-disc pl-5">
                   {DYSFUNCTIONS.map((d) => (
